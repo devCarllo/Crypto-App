@@ -1,0 +1,40 @@
+.pagination_container {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination_container button {
+  width: 70px;
+  padding: 5px 3px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: var(--card-tag-color);
+  color: var(--card-tag-text);
+  font-weight: bold;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.pagination_container span {
+  width: 40px;
+  text-align: center;
+  border: 2px solid var(--card-tag-color);
+  padding: 3px;
+  border-radius: 5px;
+  margin: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.disable {
+  opacity: 0.5;
+}
+
+.selected {
+  background-color: var(--card-tag-color);
+  color: var(--card-tag-text);
+}

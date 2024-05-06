@@ -1,0 +1,118 @@
+/* ********** LOADER ********** */
+
+.loader_container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--highlight);
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 70deg,
+      #0000 71deg 90deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l5 1s infinite;
+}
+@keyframes l5 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
+/* ********** SEARCH SECTION ********** */
+
+.search_container {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px auto 10px;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.search_input {
+  width: 200px;
+  background-color: var(--card-tag-color);
+  padding: 7px;
+  border-radius: 5px;
+  color: var(--card-tag-text);
+  font-size: 1rem;
+  margin-left: 10px;
+}
+::placeholder {
+  color: var(--card-tag-text);
+  font-size: 1rem;
+}
+
+.search_currency {
+  width: 70px;
+  background-color: var(--headline);
+  padding: 7px;
+  border-radius: 5px;
+  color: var(--card-tag-text);
+}
+.search_currency option {
+  background-color: var(--card-tag-color);
+  font-size: 0.9rem;
+}
+
+.show_search_list_container {
+  width: 280px;
+  height: 300px;
+  border-radius: 5px;
+  overflow-y: scroll;
+  padding: 5px;
+  position: absolute;
+  right: 10px;
+  top: 45px;
+  background-color: var(--card-paragraph);
+}
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0;
+}
+.show_search_list {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5px;
+}
+.show_search_coin {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-bottom: 1px solid var(--background-main-color);
+}
+.show_search_image {
+  width: 25px;
+  margin-right: 10px;
+}
+.show_search_name {
+  text-align: left;
+  letter-spacing: 1px;
+  color: var(--headline);
+}
