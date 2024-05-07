@@ -54,6 +54,10 @@ const Layout = ({ children }) => {
     setShowMenu((showMenu) => !showMenu);
   };
 
+  const gitHubHandler = () => {
+    window.open("https://github.com/devCarllo", "-blank");
+  };
+
   return (
     <>
       <header className={styles.header_container}>
@@ -150,14 +154,18 @@ const Layout = ({ children }) => {
       {children}
 
       <footer className={styles.footer_container}>
-        <p>با ما به روز باش</p>
-        <p>
-          ساخته شده با{" "}
-          <span>
-            <FaHeart color="#ef4565" fontSize="1rem" />
-          </span>{" "}
-          توسط devCarllo
-        </p>
+        <div>
+          <p>
+            ساخته شده با{" "}
+            <span className={styles.footer_icon}>
+              <FaHeart color="#ef4565" fontSize="1rem" />
+            </span>{" "}
+            توسط{" "}
+            <span onClick={gitHubHandler} className={styles.footer_link}>
+              devCarlo
+            </span>
+          </p>
+        </div>
       </footer>
     </>
   );
