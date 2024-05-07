@@ -13,7 +13,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const Modal = ({ showChart, setShowChart }) => {
+const Modal = ({ showChart, setShowChart, currencyValue }) => {
   const [type, setType] = useState("prices");
 
   const showHandler = () => {
@@ -93,14 +93,19 @@ const Modal = ({ showChart, setShowChart }) => {
             <div>
               <span className={styles.chart_details_title}>ارزش بازار: </span>
               <span className={styles.chart_details_content}>
-                ${showChart.coin.market_cap.toLocaleString()}
+                {currencyValue === "usd" && <span>$</span>}
+                {currencyValue === "eur" && <span>€</span>}
+                {currencyValue === "jpy" && <span>¥</span>}
+                {showChart.coin.market_cap.toLocaleString()}
               </span>
             </div>
 
             <div>
               <span className={styles.chart_details_title}>بیشترین قیمت: </span>
               <span className={styles.chart_details_content}>
-                $
+                {currencyValue === "usd" && <span>$</span>}
+                {currencyValue === "eur" && <span>€</span>}
+                {currencyValue === "jpy" && <span>¥</span>}
                 {showChart.coin.ath > 1
                   ? showChart.coin.ath.toLocaleString()
                   : showChart.coin.ath}
@@ -109,7 +114,9 @@ const Modal = ({ showChart, setShowChart }) => {
             <div>
               <span className={styles.chart_details_title}>قیمت: </span>
               <span className={styles.chart_details_content}>
-                $
+                {currencyValue === "usd" && <span>$</span>}
+                {currencyValue === "eur" && <span>€</span>}
+                {currencyValue === "jpy" && <span>¥</span>}
                 {showChart.coin.current_price > 1
                   ? showChart.coin.current_price.toLocaleString()
                   : showChart.coin.current_price}

@@ -51,7 +51,11 @@ const HomePage = () => {
         <Pagination page={pageNum} setPage={setPageNum} />
 
         {!!showChart && (
-          <Modal showChart={showChart} setShowChart={setShowChart} />
+          <Modal
+            showChart={showChart}
+            setShowChart={setShowChart}
+            currencyValue={currencyValue}
+          />
         )}
       </div>
     </>
