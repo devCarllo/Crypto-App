@@ -102,3 +102,33 @@
   height: 70%;
   border-radius: 5px;
 }
+
+@media (max-width: 530px) {
+  .chart_box_title {
+    margin-bottom: 15px;
+  }
+  .chart_box {
+    height: 100%;
+  }
+  .chart_box_details {
+    flex-flow: column-reverse nowrap;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .chart_box_details div {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 430px) {
+  .chart_title_image {
+    width: 40px;
+    height: 40px;
+  }
+  .chart_price_type_btn {
+    font-size: 0.9rem;
+    width: 90px;
+    margin-right: 10px;
+  }
+}

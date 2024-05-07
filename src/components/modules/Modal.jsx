@@ -100,13 +100,19 @@ const Modal = ({ showChart, setShowChart }) => {
             <div>
               <span className={styles.chart_details_title}>بیشترین قیمت: </span>
               <span className={styles.chart_details_content}>
-                ${showChart.coin.ath.toLocaleString()}
+                $
+                {showChart.coin.ath > 1
+                  ? showChart.coin.ath.toLocaleString()
+                  : showChart.coin.ath}
               </span>
             </div>
             <div>
               <span className={styles.chart_details_title}>قیمت: </span>
               <span className={styles.chart_details_content}>
-                ${showChart.coin.current_price.toLocaleString()}
+                $
+                {showChart.coin.current_price > 1
+                  ? showChart.coin.current_price.toLocaleString()
+                  : showChart.coin.current_price}
               </span>
             </div>
           </div>

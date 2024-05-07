@@ -152,9 +152,18 @@
   color: var(--redNumber);
 }
 
-@media (max-width: 390px) {
+@media (max-width: 490px) {
   .coin_list_image {
     width: 35px;
+  }
+  .coin_list_chart {
+    width: 80px;
+  }
+}
+
+@media (max-width: 390px) {
+  .coin_list_image {
+    width: 30px;
   }
   .coin_list_name {
     font-size: 0.9rem;
@@ -163,6 +172,14 @@
     font-size: 0.9rem;
   }
   .coin_list_chart {
-    width: 60px;
+    width: 50px;
+  }
+  .green {
+    color: var(--greenNumber);
+    font-size: 0.9rem;
+  }
+  .red {
+    color: var(--redNumber);
+    font-size: 0.9rem;
   }
 }
