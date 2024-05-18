@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 
 import { searchCoin } from "../../services/cryptoApi";
+import SearchItem from "../modules/SearchItem";
 
 import styles from "../../styles/Search.module.css";
 
-const Search = ({ currencyValue, setCurrencyValue }) => {
+const Search = ({ currencyValue, setCurrencyValue, setShowChart }) => {
   const [fetchResult, setFetchResult] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -75,18 +76,14 @@ const Search = ({ currencyValue, setCurrencyValue }) => {
                 <div className={styles.loader}></div>
               </div>
             ) : (
-              <ul className={styles.show_search_list}>
-                {fetchResult.map((item) => (
-                  <li key={item.id} className={styles.show_search_coin}>
-                    <span className={styles.show_search_name}>{item.name}</span>
-                    <img
-                      src={item.thumb}
-                      alt={`${item.symbol} Image`}
-                      className={styles.show_search_image}
-                    />
-                  </li>
-                ))}
-              </ul>
+              fetchResult.map((item) => (
+                <SearchItem
+                  key={item.id}
+                  data={item}
+                  currencyValue={currencyValue}
+                  setShowChart={setShowChart}
+                />
+              ))
             )}
           </section>
         )}

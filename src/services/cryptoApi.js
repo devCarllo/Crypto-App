@@ -11,4 +11,7 @@ const getAllData = () => `${BASE_URL}coins/markets?vs_currency=usd${API_KEY}`;
 const getChart = (coin, currency) =>
   `${BASE_URL}coins/${coin}/market_chart?vs_currency=${currency}&days=7${API_KEY}`;
 
-export { getCoinsList, searchCoin, getAllData, getChart };
+const getWithId = (id, currency) =>
+  `${BASE_URL}coins/markets?vs_currency=${currency}&ids=${id}${API_KEY}`;
+
+export { getCoinsList, searchCoin, getAllData, getChart, getWithId };

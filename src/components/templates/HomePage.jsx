@@ -39,6 +39,7 @@ const HomePage = () => {
         <Search
           currencyValue={currencyValue}
           setCurrencyValue={setCurrencyValue}
+          setShowChart={setShowChart}
         />
 
         <TableCoin

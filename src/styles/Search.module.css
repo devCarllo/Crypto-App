@@ -106,6 +106,7 @@
   margin-bottom: 10px;
   padding: 5px;
   border-bottom: 1px solid var(--background-main-color);
+  cursor: pointer;
 }
 .show_search_image {
   width: 25px;

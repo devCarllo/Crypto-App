@@ -96,7 +96,9 @@ const Modal = ({ showChart, setShowChart, currencyValue }) => {
                 {currencyValue === "usd" && <span>$</span>}
                 {currencyValue === "eur" && <span>€</span>}
                 {currencyValue === "jpy" && <span>¥</span>}
-                {showChart.coin.market_cap.toLocaleString()}
+                {showChart.coin.market_cap > 1
+                  ? showChart.coin.market_cap.toLocaleString()
+                  : showChart.coin.market_cap}
               </span>
             </div>
 
